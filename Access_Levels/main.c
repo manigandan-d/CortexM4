@@ -6,7 +6,7 @@ void check_access_level() {
 
 	__asm volatile ("MRS %0, CONTROL" : "=r" (control_reg));
 
-	if(control_reg == 0) {
+	if((control_reg & 0x1) == 0) {
 		printf("\tRunning in Privileged Access Level\n");
 	}
 	else {
