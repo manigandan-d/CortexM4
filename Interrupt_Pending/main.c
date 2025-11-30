@@ -21,6 +21,8 @@ int main(void) {
 	*NVIC_ISPR1 |= (1 << (IRQ_NO_USART3 % 32));
 	*NVIC_ISER1 |= (1 << (IRQ_NO_USART3 % 32));
 	*NVIC_ICER1 |= (1 << (IRQ_NO_USART3 % 32));
+
+	while(1);
 }
 
 void USART1_IRQHandler(void) {
